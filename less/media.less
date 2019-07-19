@@ -1,0 +1,586 @@
+// out: ../css/media.css
+
+
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+}
+	h1, h2, h3, h4, h5, h6, ul, li, span, p, div, a {
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	font-weight: normal;
+	list-style: none;
+	text-decoration: none;
+	color: #000;
+}
+
+
+// .flex-wrap {
+//     max-width: 1200px;
+//     margin: 0 auto;
+//     padding: 0 15px;
+//     box-sizing: border-box;
+// }
+
+// .mobile-nav {
+// 	display: none;
+// 	padding: 15px 10px;
+
+// 	.logo {
+// 		display: flex;
+// 		justify-content: space-between;
+// 		align-items: center;
+// 		margin-bottom: 10px;
+// 		img {
+// 			width: 50%;
+// 		}
+// 		a {
+
+// 		}
+// 	}
+// 	ul {
+
+// 		li {
+// 			margin-bottom: 5px;
+			
+// 			a {
+// 			}
+// 		}
+// 	}
+// }
+
+// .overlay {
+// 	display: none;
+// } 
+
+
+// header {
+//     padding: 1vw;
+
+//     .top-header-content {
+//         display: flex;
+//         justify-content: space-between;
+
+//         .logo {
+//             img {
+//                 width: 200px;
+//             }
+//         }
+//         .header-navigation {
+//             .menu {
+//                 display: flex;
+//                 justify-content: space-around;
+//                 li {
+//                     margin: 10px;
+//                     text-transform: uppercase;
+
+//                     &.mobile {
+//                         display: none;
+//                     }
+                    
+//                     a {
+//                         color:#273c75;
+//                         font-size: 1.14rem;
+//                         font-weight: bold;
+//                     }
+                    
+//                 }
+                
+//             }
+//         }
+//     }
+// }
+
+
+@media (max-width: 1200px) {
+    header {
+        min-height: 350px;
+        .top-header {
+            .header-navigation {
+                ul {
+                    li {
+                        a {
+                            font-size: 1.4rem;
+                        }
+                    }
+                }
+            }
+            .social-icons {
+                img {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+    
+        .header-content {
+            .header-text {
+                h2 {
+                    font-size: 3.5rem;
+                }
+            }
+        }
+    }
+    
+    .about {
+        .about-content {
+            .about-description {
+                width: 100%;
+                h3 {
+                }
+                img {
+                }
+                p {
+                }
+            }
+            .about-image {
+                img {
+                    width: 40vw;
+                }
+            }
+        }
+    }
+    
+    .our-menu {
+        .main-menu {
+            .menu-unit {
+                &:nth-child(odd) {
+                    margin-right: 50px;
+                }
+            }
+        }
+    }
+    
+    .reservation {
+        .reservation-content {
+            padding: 0;
+            .reservation-content-left-aside {
+                .reservation-content-images {
+                    display: none;
+                    img {
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    header {
+        .top-header {
+            .header-navigation {
+                ul {
+                    li {
+                        a {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+            .social-icons {
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+    
+        .header-content {
+            .header-text {
+                h2 {
+                }
+            }
+            .header-decoration {
+                margin: 30px 0 40px;
+                img {
+                }
+            }
+            .header-btn {
+                .black-btn {
+                }
+                .white-btn  {
+                }
+            }
+        }
+    }
+    
+    .about {
+        .about-content {
+            .about-description {
+                h3 {
+                    font-size: 2rem;
+                }
+                img {
+                }
+                p {
+                }
+            }
+            .about-image {
+                img {
+                }
+            }
+        }
+    }
+    
+    .ingredients {
+        min-height: 500px;
+        .ingredients-content {
+            .block-ingredients {
+                .ingredients-text {
+                    padding: 30px;
+                    h3 {
+                    }
+                    img {
+                        width: 90px;
+                    }
+                    p {
+                    }
+                }
+            }
+        }
+    }
+    
+    .our-menu {
+        .main-menu {
+            padding-bottom: 30px;
+            .menu-unit {
+                &:nth-child(odd) {
+                    margin: 0 auto;
+                }
+                
+                .menu-unit-header {
+                    h3 {
+                    }
+                    img {
+    
+                    }
+                }
+                .menu-unit-content {
+                    .menu-unit-content-dish {
+                        .dish-name {
+                            .dish-name-flex {
+                                h6, span {
+                                }
+                            }
+                            p {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .reviews {
+        margin-top: 0;
+        padding: 270px;
+        .block-reviews {
+            padding: 20px;
+            right: 10%;
+            .reviews-text {
+                h3 {
+                }
+                img {
+                }
+                p {
+                    font-size: 1.14rem;
+                }
+            }
+        }
+    }
+    
+    .reservation {
+        .reservation-content {
+            .reservation-content-left-aside {
+                .reservation-content-images {
+                    img {
+                    }
+                }
+            }
+            .reservation-content-right-aside {
+                .reservation-content-text {
+                    h3 {
+                    }
+                    img {
+    
+                    }
+                    p {
+                    
+                    }
+                }
+                .reservation-content-form {
+                    form {
+                        .form-container {
+                            .form-container-flex {
+                                .form-left-block {
+                                    .form-left-block-name {
+                                        &:first-child {
+                                        }
+                                        label {
+                                        }
+                                        input {
+                                            
+                                        }
+                                    }
+                                }
+                                .form-right-block {
+                                    .form-right-block-name {
+                                        &:first-child {
+                                        
+                                        }
+                                        label {
+                                            
+    
+                                        }
+                                        input {
+                                            
+                                        }
+                                        select {
+                                            
+                                            option {
+        
+                                            }
+                                        }
+                                    }
+                                    
+                                }
+                            }
+                            
+                        }
+                        .form-button {
+                            button {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    footer {
+        .footer-container {
+            .footer-block {
+                
+                h5 {
+                    
+                }
+                img {
+    
+                }
+                p {
+                    
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        .top-header {
+            .header-navigation {
+                ul {
+                    li {
+                        a {
+                        }
+                    }
+                }
+            }
+            .social-icons {
+                img {
+                }
+            }
+        }
+    
+        .header-content {
+            .header-text {
+                h2 {
+                }
+            }
+            .header-decoration {
+                margin: 20px 0;
+                img {
+                }
+            }
+            .header-btn {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                .black-btn, .white-btn {
+                    padding: 15px 10px;
+                    text-align: center;
+                    width: 180px;
+                    margin-bottom: 10px;
+                }
+               
+            }
+        }
+    }
+    
+    .about {
+        .about-content {
+            .about-description {
+                h3 {
+                }
+                img {
+
+                }
+                p {
+                }
+            }
+            .about-image {
+                display: none;
+                img {
+                }
+            }
+        }
+    }
+    
+    .ingredients {
+        .ingredients-content {
+            .block-ingredients {
+                left: 10%;
+                margin: 5px;
+                .ingredients-text {
+                    h3 {
+                        font-size: 2rem;
+                    }
+                    img {
+                        display: none;
+                    }
+                    p {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+    
+    .our-menu {
+        .main-menu {
+            .menu-unit {
+                &:nth-child(odd) {
+                }
+                
+                .menu-unit-header {
+                    h3 {
+                    }
+                    img {
+    
+                    }
+                }
+                .menu-unit-content {
+                    .menu-unit-content-dish {
+                        .dish-name {
+                            .dish-name-flex {
+                                h6, span {
+                                }
+                            }
+                            p {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .reviews {
+        .block-reviews {
+            .reviews-text {
+                h3 {
+                }
+                img {
+                }
+                p {
+                }
+            }
+        }
+    }
+    
+    .reservation {
+        .reservation-content {
+            .reservation-content-left-aside {
+                .reservation-content-images {
+                    img {
+                    }
+                }
+            }
+            .reservation-content-right-aside {
+                .reservation-content-text {
+                    h3 {
+                    }
+                    img {
+    
+                    }
+                    p {
+                    
+                    }
+                }
+                .reservation-content-form {
+                    form {
+                        .form-container {
+                            .form-container-flex {
+                                .form-left-block {
+                                    .form-left-block-name {
+                                        &:first-child {
+                                        }
+                                        label {
+                                        }
+                                        input {
+                                            
+                                        }
+                                    }
+                                }
+                                .form-right-block {
+                                    .form-right-block-name {
+                                        &:first-child {
+                                        
+                                        }
+                                        label {
+                                            
+    
+                                        }
+                                        input {
+                                            
+                                        }
+                                        select {
+                                            
+                                            option {
+        
+                                            }
+                                        }
+                                    }
+                                    
+                                }
+                            }
+                            
+                        }
+                        .form-button {
+                            button {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    footer {
+        .footer-container {
+            .footer-block {
+                h5 {
+                    
+                }
+                img {
+    
+                }
+                p {
+                    
+                }
+            }
+        }
+    }
+}
