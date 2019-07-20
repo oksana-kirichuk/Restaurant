@@ -17,81 +17,81 @@ html, body {
 }
 
 
-// .flex-wrap {
-//     max-width: 1200px;
-//     margin: 0 auto;
-//     padding: 0 15px;
-//     box-sizing: border-box;
-// }
+.flex-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
 
-// .mobile-nav {
-// 	display: none;
-// 	padding: 15px 10px;
+.mobile-nav {
+	display: none;
+	padding: 15px 10px;
 
-// 	.logo {
-// 		display: flex;
-// 		justify-content: space-between;
-// 		align-items: center;
-// 		margin-bottom: 10px;
-// 		img {
-// 			width: 50%;
-// 		}
-// 		a {
+	.logo {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 10px;
+		img {
+			width: 50%;
+		}
+		a {
 
-// 		}
-// 	}
-// 	ul {
+		}
+	}
+	ul {
 
-// 		li {
-// 			margin-bottom: 5px;
+		li {
+			margin-bottom: 5px;
 			
-// 			a {
-// 			}
-// 		}
-// 	}
-// }
+			a {
+			}
+		}
+	}
+}
 
-// .overlay {
-// 	display: none;
-// } 
+.overlay {
+	display: none;
+} 
 
 
-// header {
-//     padding: 1vw;
+header {
+    padding: 1vw;
 
-//     .top-header-content {
-//         display: flex;
-//         justify-content: space-between;
+    .top-header-content {
+        display: flex;
+        justify-content: space-between;
 
-//         .logo {
-//             img {
-//                 width: 200px;
-//             }
-//         }
-//         .header-navigation {
-//             .menu {
-//                 display: flex;
-//                 justify-content: space-around;
-//                 li {
-//                     margin: 10px;
-//                     text-transform: uppercase;
+        .logo {
+            img {
+                width: 200px;
+            }
+        }
+        .header-navigation {
+            .menu {
+                display: flex;
+                justify-content: space-around;
+                li {
+                    margin: 10px;
+                    text-transform: uppercase;
 
-//                     &.mobile {
-//                         display: none;
-//                     }
+                    &.mobile {
+                        display: none;
+                    }
                     
-//                     a {
-//                         color:#273c75;
-//                         font-size: 1.14rem;
-//                         font-weight: bold;
-//                     }
+                    a {
+                        color:#273c75;
+                        font-size: 1.14rem;
+                        font-weight: bold;
+                    }
                     
-//                 }
+                }
                 
-//             }
-//         }
-//     }
-// }
+            }
+        }
+    }
+}
 
 
 @media (max-width: 1200px) {
@@ -361,7 +361,13 @@ html, body {
     
     footer {
         .footer-container {
+            padding: 50px 15px;
+            flex-wrap: nowrap;
+
             .footer-block {
+                &:first-child, &:nth-child(2) {
+                    margin-right: 5px;
+                }
                 
                 h5 {
                     
@@ -378,17 +384,132 @@ html, body {
 }
 
 @media (max-width: 600px) {
-    header {
-        .top-header {
-            .header-navigation {
-                ul {
+
+    .menu-container {
+        .overlay {
+            display: block;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, .5);
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.5s ease;
+            z-index: 99999;
+
+            &.active {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        .mobile-nav {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 60%;
+            background-color: #ffffff;
+            transform: translateX(-100%);
+            transition: all 0.4s ease;
+            z-index: 99999;
+
+            &.active {
+                transform: translateX(0);
+                padding: 0;
+            }
+
+            .logo {
+                padding: 10px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                min-height: 120px;
+                box-sizing: border-box;
+                position: relative;
+
+                img {
+                    padding: 0;
+                    width: 100%;
+
+                }
+                span {
+                    z-index: 3;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    padding: 8px 10px;
+                    background-color: #fff;
+                }
+            }
+
+            .mobile-section {
+                padding: 30px;
+
+                h6 {
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    margin-bottom: 20px;
+                    font-size: 18px;
+                }
+    
+                .mobile-menu {
                     li {
+                        border-bottom: 1px solid #eee;
+                        margin-bottom: 20px;
+                        padding: 15px 0;
+                        font-weight: 500;
+                        span {
+                            width: 20px;
+                            text-align: center;
+                            margin-right: 15px;
+                        }
                         a {
+                            font-size: 16px;
+
                         }
                     }
                 }
             }
+        }
+    }
+
+    header {
+        .top-header {
+            justify-content: space-between;
+            padding: 10px 20px;
+
+            .header-navigation {
+                width: 0;
+                order: 2;
+                ul {
+                    li {
+                        display: none;
+                        flex-wrap: wrap;
+                        &.mobile {
+                            visibility: visible;
+                            display: block;
+                        }
+                        a {
+                            width: 100%;
+
+                            span {
+                                color: #fff;
+                                font-size: 1.3rem;
+                            }
+
+                        }
+                       
+                    }
+                }
+            }
             .social-icons {
+                order: 1;
+                padding-left: 10px;
+                
                 img {
                 }
             }
@@ -397,6 +518,7 @@ html, body {
         .header-content {
             .header-text {
                 h2 {
+                    font-size: 2rem;
                 }
             }
             .header-decoration {
@@ -408,10 +530,13 @@ html, body {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                margin-bottom: 30px;
+
                 .black-btn, .white-btn {
-                    padding: 15px 10px;
+                    padding: 10px;
+                    font-size: 1rem;
                     text-align: center;
-                    width: 180px;
+                    width: 140px;
                     margin-bottom: 10px;
                 }
                
@@ -425,14 +550,18 @@ html, body {
                 h3 {
                 }
                 img {
-
+                   &:nth-child(4) {
+                       margin-left: 20%;
+                   }
                 }
                 p {
+                    font-size: 1rem;
                 }
             }
             .about-image {
                 display: none;
                 img {
+                    
                 }
             }
         }
@@ -443,7 +572,11 @@ html, body {
             .block-ingredients {
                 left: 10%;
                 margin: 5px;
+                top: 30px;
+
                 .ingredients-text {
+                    padding: 15px;
+
                     h3 {
                         font-size: 2rem;
                     }
@@ -488,13 +621,20 @@ html, body {
     }
     
     .reviews {
+        padding: 250px 0;
+
         .block-reviews {
+            width: 250px;
+
             .reviews-text {
                 h3 {
+                    font-size: 2rem;
                 }
                 img {
                 }
                 p {
+                    font-size: 1rem;
+                    line-height: 1.5;
                 }
             }
         }
@@ -509,8 +649,11 @@ html, body {
                 }
             }
             .reservation-content-right-aside {
+                padding: 40px 15px;
+                
                 .reservation-content-text {
                     h3 {
+                        font-size: 2rem;
                     }
                     img {
     
@@ -520,11 +663,24 @@ html, body {
                     }
                 }
                 .reservation-content-form {
+                    width: 250px;
+                    padding: 20px;
+
                     form {
                         .form-container {
                             .form-container-flex {
+                                flex-direction: column;
+
                                 .form-left-block {
+                                    margin: 0 auto;
+                                    margin-bottom: 10px;
+
+
                                     .form-left-block-name {
+                                        display: flex;
+                                        justify-content: center;
+                                        flex-direction: column;
+
                                         &:first-child {
                                         }
                                         label {
@@ -535,7 +691,14 @@ html, body {
                                     }
                                 }
                                 .form-right-block {
+                                    margin: 0 auto;
+                                    
+
                                     .form-right-block-name {
+                                        display: flex;
+                                        justify-content: center;
+                                        flex-direction: column;
+                                        
                                         &:first-child {
                                         
                                         }
@@ -559,7 +722,10 @@ html, body {
                             
                         }
                         .form-button {
+                            text-align: center;
+
                             button {
+                                width: 120px;
                             }
                         }
                     }
@@ -570,7 +736,16 @@ html, body {
     
     footer {
         .footer-container {
+            flex-direction: column;
+            padding: 30px 15px;
+
             .footer-block {
+                width: 100%;
+
+                &:first-child, &:nth-child(2) {
+                margin-bottom: 40px;
+                }
+
                 h5 {
                     
                 }
@@ -578,7 +753,7 @@ html, body {
     
                 }
                 p {
-                    
+                    padding: 0 25px;  
                 }
             }
         }

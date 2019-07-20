@@ -24,6 +24,57 @@ a {
   text-decoration: none;
   color: #000;
 }
+.flex-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+.mobile-nav {
+  display: none;
+  padding: 15px 10px;
+}
+.mobile-nav .logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.mobile-nav .logo img {
+  width: 50%;
+}
+.mobile-nav ul li {
+  margin-bottom: 5px;
+}
+.overlay {
+  display: none;
+}
+header {
+  padding: 1vw;
+}
+header .top-header-content {
+  display: flex;
+  justify-content: space-between;
+}
+header .top-header-content .logo img {
+  width: 200px;
+}
+header .top-header-content .header-navigation .menu {
+  display: flex;
+  justify-content: space-around;
+}
+header .top-header-content .header-navigation .menu li {
+  margin: 10px;
+  text-transform: uppercase;
+}
+header .top-header-content .header-navigation .menu li.mobile {
+  display: none;
+}
+header .top-header-content .header-navigation .menu li a {
+  color: #273c75;
+  font-size: 1.14rem;
+  font-weight: bold;
+}
 @media (max-width: 1200px) {
   header {
     min-height: 350px;
@@ -94,8 +145,123 @@ a {
   .reviews .block-reviews .reviews-text p {
     font-size: 1.14rem;
   }
+  footer .footer-container {
+    padding: 50px 15px;
+    flex-wrap: nowrap;
+  }
+  footer .footer-container .footer-block:first-child,
+  footer .footer-container .footer-block:nth-child(2) {
+    margin-right: 5px;
+  }
 }
 @media (max-width: 600px) {
+  .menu-container .overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease;
+    z-index: 99999;
+  }
+  .menu-container .overlay.active {
+    visibility: visible;
+    opacity: 1;
+  }
+  .menu-container .mobile-nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 60%;
+    background-color: #ffffff;
+    transform: translateX(-100%);
+    transition: all 0.4s ease;
+    z-index: 99999;
+  }
+  .menu-container .mobile-nav.active {
+    transform: translateX(0);
+    padding: 0;
+  }
+  .menu-container .mobile-nav .logo {
+    padding: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 120px;
+    box-sizing: border-box;
+    position: relative;
+  }
+  .menu-container .mobile-nav .logo img {
+    padding: 0;
+    width: 100%;
+  }
+  .menu-container .mobile-nav .logo span {
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 8px 10px;
+    background-color: #fff;
+  }
+  .menu-container .mobile-nav .mobile-section {
+    padding: 30px;
+  }
+  .menu-container .mobile-nav .mobile-section h6 {
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+  .menu-container .mobile-nav .mobile-section .mobile-menu li {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+    padding: 15px 0;
+    font-weight: 500;
+  }
+  .menu-container .mobile-nav .mobile-section .mobile-menu li span {
+    width: 20px;
+    text-align: center;
+    margin-right: 15px;
+  }
+  .menu-container .mobile-nav .mobile-section .mobile-menu li a {
+    font-size: 16px;
+  }
+  header .top-header {
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+  header .top-header .header-navigation {
+    width: 0;
+    order: 2;
+  }
+  header .top-header .header-navigation ul li {
+    display: none;
+    flex-wrap: wrap;
+  }
+  header .top-header .header-navigation ul li.mobile {
+    visibility: visible;
+    display: block;
+  }
+  header .top-header .header-navigation ul li a {
+    width: 100%;
+  }
+  header .top-header .header-navigation ul li a span {
+    color: #fff;
+    font-size: 1.3rem;
+  }
+  header .top-header .social-icons {
+    order: 1;
+    padding-left: 10px;
+  }
+  header .header-content .header-text h2 {
+    font-size: 2rem;
+  }
   header .header-content .header-decoration {
     margin: 20px 0;
   }
@@ -103,13 +269,21 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 30px;
   }
   header .header-content .header-btn .black-btn,
   header .header-content .header-btn .white-btn {
-    padding: 15px 10px;
+    padding: 10px;
+    font-size: 1rem;
     text-align: center;
-    width: 180px;
+    width: 140px;
     margin-bottom: 10px;
+  }
+  .about .about-content .about-description img:nth-child(4) {
+    margin-left: 20%;
+  }
+  .about .about-content .about-description p {
+    font-size: 1rem;
   }
   .about .about-content .about-image {
     display: none;
@@ -117,6 +291,10 @@ a {
   .ingredients .ingredients-content .block-ingredients {
     left: 10%;
     margin: 5px;
+    top: 30px;
+  }
+  .ingredients .ingredients-content .block-ingredients .ingredients-text {
+    padding: 15px;
   }
   .ingredients .ingredients-content .block-ingredients .ingredients-text h3 {
     font-size: 2rem;
@@ -126,5 +304,68 @@ a {
   }
   .ingredients .ingredients-content .block-ingredients .ingredients-text p {
     font-size: 1rem;
+  }
+  .reviews {
+    padding: 250px 0;
+  }
+  .reviews .block-reviews {
+    width: 250px;
+  }
+  .reviews .block-reviews .reviews-text h3 {
+    font-size: 2rem;
+  }
+  .reviews .block-reviews .reviews-text p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .reservation .reservation-content .reservation-content-right-aside {
+    padding: 40px 15px;
+  }
+  .reservation .reservation-content .reservation-content-right-aside .reservation-content-text h3 {
+    font-size: 2rem;
+  }
+  .reservation .reservation-content .reservation-content-right-aside .reservation-content-form {
+    width: 250px;
+    padding: 20px;
+  }
+  .reservation .reservation-content .reservation-content-right-aside .reservation-content-form form .form-container .form-container-flex {
+    flex-direction: column;
+  }
+  .reservation .reservation-content .reservation-content-right-aside .reservation-content-form form .form-container .form-container-flex .form-left-block {
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+  .reservation .reservation-content .reservation-content-right-aside .reservation-content-form form .form-container .form-container-flex .form-left-block .form-left-block-name {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .reservation .reservation-content .reservation-content-right-aside .reservation-content-form form .form-container .form-container-flex .form-right-block {
+    margin: 0 auto;
+  }
+  .reservation .reservation-content .reservation-content-right-aside .reservation-content-form form .form-container .form-container-flex .form-right-block .form-right-block-name {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .reservation .reservation-content .reservation-content-right-aside .reservation-content-form form .form-button {
+    text-align: center;
+  }
+  .reservation .reservation-content .reservation-content-right-aside .reservation-content-form form .form-button button {
+    width: 120px;
+  }
+  footer .footer-container {
+    flex-direction: column;
+    padding: 30px 15px;
+  }
+  footer .footer-container .footer-block {
+    width: 100%;
+  }
+  footer .footer-container .footer-block:first-child,
+  footer .footer-container .footer-block:nth-child(2) {
+    margin-bottom: 40px;
+  }
+  footer .footer-container .footer-block p {
+    padding: 0 25px;
   }
 }

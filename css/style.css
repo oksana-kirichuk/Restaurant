@@ -203,7 +203,7 @@ header .header-content .header-btn .white-btn:hover {
 .about .about-content .about-description h3 {
   color: #cc9900;
   font-family: "Yeseva One";
-  font-size: 2.57rem;
+  font-size: 2rem;
   font-weight: 500;
   line-height: 24px;
   margin-bottom: 20px;
@@ -227,7 +227,7 @@ header .header-content .header-btn .white-btn:hover {
 }
 .ingredients {
   background-image: url(../img/ingr-background.png);
-  min-height: 700px;
+  min-height: 650px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -236,7 +236,7 @@ header .header-content .header-btn .white-btn:hover {
   position: relative;
 }
 .ingredients .ingredients-content .block-ingredients {
-  margin: 5vh;
+  margin: 60px;
   border: 1px solid #fbf7c0;
   background-color: #000000;
   opacity: 0.67;
